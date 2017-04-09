@@ -1,0 +1,24 @@
+--- layout: default ---
+
+<main class="c-single-page__main u-margin-bottom-huge">
+  <div class="o-wrapper o-wrapper--small">
+    <article class="c-single-page__article">
+      <header class="c-article__header u-align-center">
+        <h1 class="c-article__title">{{ page.title }}</h1>
+        <p class="article__subtitle u-color-gray-dark">
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | jdate: "%d %b %Y" | habify}}</time>{% if page.author %} توسط <span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="{{ site.baseurl | urljoin: "/about" }}" itemprop="name">{{ page.author }}</a></span>{% endif %}{% if page.category_fa  %} در دسته‌ی: <a href="{{ site.baseurl | urljoin: "/blog/category/" }}{{ page.category }}">{{ page.category_fa }}</a>{% endif %}
+        </p>
+      </header>
+
+      <main class="c-article__body u-margin-bottom-large">
+        {{ content }}
+      </main>
+
+      <footer class="c-article__footer">
+        {% include partials/tags.html %}
+
+        {% include partials/share-links.html %}
+      </footer>
+    </article>
+  </div>
+</main>
