@@ -31,6 +31,19 @@ kramdown:
   input: GFM
 gems:
   - jekyll-feed
+# Handling Readin
+encoding: "utf-8"
+include:
+  - .htaccess
+  - CNAME
+  - README.md
+keep_files: 
+  - .git
+  - assets
 exclude:
-  - Gemfile
-  - Gemfile.lock
+  - assets
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - bower.json
+  - webpack.config.js
