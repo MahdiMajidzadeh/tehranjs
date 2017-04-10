@@ -38,63 +38,22 @@ title: خانه
 <section class="c-section c-section--events">
   <div class="o-wrapper o-wrapper--small">
     <h2 class="c-section__title u-margin-bottom-large">آرشیو جلسات</h2>
-    <div class="c-event-item u-margin-bottom-large">
-      <span class="c-event-item__number">۲۱</span>
-      <div class="c-event-item__body">
-        <h3 class="c-event-item__title u-margin-bottom-none"><a href="event.html">آنتی پترین‌ها در برنامه نویسی</a></h3>
-        <p class="c-event-item__subtitle u-margin-bottom-none"><span>۱۴ اسفند ۹۵</span> - <a href="#">امیر حسین</a></p>
-      </div>
-      <!-- / .c-event-item__body -->
-    </div>
-    <!-- / .c-event-item -->
-    <div class="c-event-item u-margin-bottom-large">
-      <span class="c-event-item__number">۲۰</span>
-      <div class="c-event-item__body">
-        <h3 class="c-event-item__title u-margin-bottom-none"><a href="event.html">برنامه نویسی سمت سرور با نود جی اس: چالش‌ها</a></h3>
-        <p class="c-event-item__subtitle u-margin-bottom-none"><span>۲۳ بهمن ۹۵</span> - <a href="#">برزو ارجمند</a></p>
-      </div>
-      <!-- / .c-event-item__body -->
-    </div>
-    <!-- / .c-event-item -->
-    <div class="c-event-item u-margin-bottom-large">
-      <span class="c-event-item__number">۱۹</span>
-      <div class="c-event-item__body">
-        <h3 class="c-event-item__title u-margin-bottom-none"><a href="event.html">آنتی پترین‌ها در برنامه نویسی</a></h3>
-        <p class="c-event-item__subtitle u-margin-bottom-none"><span>۱۴ اسفند ۹۵</span> - <a href="#">سردار آزمون</a></p>
-      </div>
-      <!-- / .c-event-item__body -->
-    </div>
-    <!-- / .c-event-item -->
-    <div class="c-event-item u-margin-bottom-large">
-      <span class="c-event-item__number">۱۸</span>
-      <div class="c-event-item__body">
-        <h3 class="c-event-item__title u-margin-bottom-none"><a href="event.html">برنامه نویسی سمت سرور با نود جی اس: چالش‌ها</a></h3>
-        <p class="c-event-item__subtitle u-margin-bottom-none"><span>۲۳ بهمن ۹۵</span> - <a href="#">برزو ارجمند</a></p>
-      </div>
-      <!-- / .c-event-item__body -->
-    </div>
-    <!-- / .c-event-item -->
-    <div class="c-event-item u-margin-bottom-large">
-      <span class="c-event-item__number">۱۷</span>
-      <div class="c-event-item__body">
-        <h3 class="c-event-item__title u-margin-bottom-none"><a href="event.html">آنتی پترین‌ها در برنامه نویسی</a></h3>
-        <p class="c-event-item__subtitle u-margin-bottom-none"><span>۱۴ اسفند ۹۵</span> - <a href="#">سردار آزمون</a></p>
-      </div>
-      <!-- / .c-event-item__body -->
-    </div>
-    <!-- / .c-event-item -->
+    {% for post in site.categories.event %}
+      {% include partials/event-list.html post=post %}
+    {% endfor %}
+    
+    {% if paginator.previous_page %}
     <div class="c-readmore">
       <a href="events.html" title="آرشیو جلسات تهران جی اس" class="c-btn c-btn--primary c-gtn-ghost c-btn--small">ادامه آرشیو</a>
     </div>
+    {% endif %}
   </div>
-  <!-- / .o-wrapper -->
 </section>
-<!-- / .c-section-events -->
 
 <section class="c-section c-section--blog u-bgc-gray-lighter">
   <div class="o-wrapper o-wrapper--small">
     <h2 class="c-section__title u-margin-bottom-large">آرشیو وبلاگ</h2>
-    {% for post in site.posts %}
+    {% for post in site.categories.blog %}
       {% include partials/post-list.html post=post %}
     {% endfor %}
 

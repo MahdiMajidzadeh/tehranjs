@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-
+{% if post.categories.include?('blog') %}
 <main class="c-single-page__main u-margin-bottom-huge">
   <div class="o-wrapper o-wrapper--small">
     <article class="c-single-page__article">
@@ -24,3 +24,35 @@ layout: page
     </article>
   </div>
 </main>
+{% else %}
+<header class="c-article__header u-align-center u-padding-bottom-large">
+  <p class="u-h4 u-color-gray-dark">{{ page.session }}</p>
+  <h1 class="c-article__title u-margin-bottom-large">{{ page.title }}</h1>
+  <div class="c-event-detail">
+    <dl class="c-event-detail__list u-align-right o-list-bare u-clearfix">
+      <dt class="c-event-detail__item-title">تاریخ:</dt>
+      <dd class="c-event-detail__item-data">
+        <time datetime="2016-01-11T00:00:00+03:30" itemprop="datePublished"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | jdate: "%d %b %Y" | habify}}</time></time>
+      </dd>
+      <dt class="c-event-detail__item-title">ارایه دهنده:</dt>
+      <dd class="c-event-detail__item-data"><a href="{{ page.url }}" itemprop="name">{{ page.author }}</a></dd>
+      {% if page.video %}
+      <dt class="c-event-detail__item-title">ویدیو:</dt>
+      <dd class="c-event-detail__item-data"><a href="{{ page.video}}" itemprop="name">یوتوب</a></dd>
+      {% endif %}
+      {% if page.audio %}
+      <dt class="c-event-detail__item-title">صدا:</dt>
+      <dd class="c-event-detail__item-data"><a href="{{ page.audio }}" itemprop="name">ساندکلود</a></dd>
+      {% endif %}
+      {% if page.slides %}
+      <dt class="c-event-detail__item-title">اسلاید:</dt>
+      <dd class="c-event-detail__item-data"><a href="{{ page.slides }}" itemprop="name">{{ page.title }}</a></dd>
+      {% endif %}
+    </dl>
+  </div>
+</header>
+
+<main class="c-article__body u-margin-bottom-large">
+  {{ content }}
+</main>
+{% endif %}
