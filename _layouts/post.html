@@ -1,7 +1,7 @@
 ---
 layout: page
 ---
-{% if post.categories.include?('blog') %}
+<!--TODO: BLOG TEMPLATE-->
 <main class="c-single-page__main u-margin-bottom-huge">
   <div class="o-wrapper o-wrapper--small">
     <article class="c-single-page__article">
@@ -24,7 +24,7 @@ layout: page
     </article>
   </div>
 </main>
-{% else %}
+<!--TODO: EVENT TEMPLATE-->
 <header class="c-article__header u-align-center u-padding-bottom-large">
   <p class="u-h4 u-color-gray-dark">{{ page.session }}</p>
   <h1 class="c-article__title u-margin-bottom-large">{{ page.title }}</h1>
@@ -55,4 +55,3 @@ layout: page
 <main class="c-article__body u-margin-bottom-large">
   {{ content }}
 </main>
-{% endif %}
