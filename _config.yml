@@ -40,10 +40,9 @@ include:
 keep_files: 
   - .git
   - assets
+  - styles
 exclude:
   - assets
+  - styles
   - node_modules
-  - gulpfile.js
   - package.json
-  - bower.json
-  - webpack.config.js
