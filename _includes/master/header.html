@@ -3,10 +3,9 @@
     <div class="c-site-header__inner">
       <a href="/" class="c-brand"><img class="c-brand__logo" src="/apple-touch-icon.png" alt="tehranjs logo - لوگوی تهران جی اس"></a>
       <nav class="c-navigation">
-        <a class="c-navigation__item" href="/">خانه</a>
-        <a class="c-navigation__item" href="/">جلسات</a>
-        <a class="c-navigation__item" href="/">وبلاگ</a>
-        <a class="c-navigation__item" href="single-page.html">درباره ما</a>
+        {% for page in site.pages %} {% if page.title %}
+        <a class="c-navigation__item" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% endif %}{% endfor %}
       </nav>
     </div>
   </div>
