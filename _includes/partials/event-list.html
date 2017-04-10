@@ -1,8 +1,11 @@
 <div class="c-event-item u-margin-bottom-large">
-    <span class="c-event-item__number">{{ post.count }}</span>
-    <div class="c-event-item__body">
-      <h3 class="c-event-item__title u-margin-bottom-none"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p class="c-event-item__subtitle u-margin-bottom-none"><span><time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | jdate: "%d %b %Y" | habify}}</time></span> - <a href="{{post.url}}">post.author</a></p>
-    </div>
-    <!-- / .c-event-item__body -->
+  <!--TODO: This line breaks the code-->
+  <!--<span class="c-event-item__number">{{ event.count }}</span>-->
+  <div class="c-event-item__body">
+    <h3 class="c-event-item__title u-margin-bottom-none"><a href="{{ event.url }}">{{ event.title }}</a></h3>
+    <p class="c-event-item__subtitle u-margin-bottom-none">
+      <span><time datetime="{{ event.date | date_to_xmlschema }}" itemprop="datePublished">{{ event.date }}</time></span> - <a href="{{ event.url }}">{{ event.author }}</a>
+    </p>
   </div>
+  <!-- / .c-event-item__body -->
+</div>

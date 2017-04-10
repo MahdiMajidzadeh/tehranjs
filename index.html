@@ -38,8 +38,8 @@ title: خانه
 <section class="c-section c-section--events">
   <div class="o-wrapper o-wrapper--small">
     <h2 class="c-section__title u-margin-bottom-large">آرشیو جلسات</h2>
-    {% for post in site.categories.event %}
-      {% include partials/event-list.html post=post %}
+    {% for event in site.categories.event %}
+      {% include partials/event-list.html event=event %}
     {% endfor %}
     
     {% if paginator.previous_page %}
